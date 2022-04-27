@@ -69,7 +69,7 @@
 						</tr>
 					</tbody>
 				</table>
-				<button onclick="IMC()">
+				<button id="btnCalcular">
 					Calcular IMC
 				</button>
 			</section>
@@ -78,22 +78,22 @@
 				<form id="form-adiciona" autocomplete="off" >
 					<div class="grupo">
 						<label for="nome">Nome:</label>
-						<input id="nome" name="nome" type="text" placeholder="digite o nome do seu paciente" class="campo" autocomplete="on">
+						<input id="nome" name="nome" type="text" placeholder="digite o nome do seu paciente" class="campo" >
 					</div>
 					<div class="grupo">
 						<label for="peso">Peso:</label>
-						<input id="peso" name="peso" type="number" placeholder="digite o peso do seu paciente" class="campo campo-medio" autocomplete="off">
+						<input id="peso" name="peso" type="number" placeholder="digite o peso do seu paciente" class="campo campo-medio" >
 					</div>
 					<div class="grupo">
 						<label for="altura">Altura:</label>
-						<input id="altura" name="altura" type="number" placeholder="digite a altura do seu paciente" class="campo campo-medio"autocomplete="off">
+						<input id="altura" name="altura" type="number" placeholder="digite a altura do seu paciente" class="campo campo-medio">
 					</div>
 					<div class="grupo">
 						<label for="gordura">% de Gordura:</label>
-						<input id="gordura" type="number" placeholder="digite a porcentagem de gordura do seu paciente" class="campo campo-medio"autocomplete="off">
+						<input id="gordura" type="number" placeholder="digite a porcentagem de gordura do seu paciente" class="campo campo-medio">
 					</div>
 
-					<button id="adicionar-paciente" class="botao bto-principal">Adicionar</button>
+					<button id="adicionar-paciente" class="botao btnEnviar">Adicionar</button>
 				</form>
 			</section>
 		</main>
