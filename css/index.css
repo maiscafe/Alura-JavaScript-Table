@@ -97,6 +97,7 @@ label{
 }
 
 button{
+	right: 0;
 	padding: .5em 2em;
 	border: 0;
 	border-bottom: 3px solid;
@@ -131,4 +132,7 @@ button[disabled=disabled], button:disabled {
 
 .campo-invalido{
 	border: 1px solid red;
+}
+.paciente-invalido {
+	color: rgb(218, 50, 64);
 }
