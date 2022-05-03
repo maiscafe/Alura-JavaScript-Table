@@ -4,13 +4,10 @@ btnEnviar.addEventListener('click', form);
 function form (event) {
     event.preventDefault();
     var formulario = document.querySelector('#form-adiciona');
-    var  tabelaPacientes = document.querySelector('#tabela-pacientes');
-    var peso = formulario.peso.value
-    var altura = formulario.altura.value
-    var gordura = formulario.gordura.value
-    var nome = formulario.nome.value
+    var tabelaPacientes = document.querySelector('#tabela-pacientes');
 
-
+    var paciente = coletarDadosPaciente(formulario);
+    console.log(paciente);
 
     var pacienteTr = document.createElement('tr');
     var nomeTd = document.createElement('td');
@@ -20,11 +17,11 @@ function form (event) {
     var imcTd = document.createElement('td');
 
 
-    nomeTd.textContent = nome;
-    pesoTd.textContent = peso;
-    alturaTd.textContent = altura;
-    gorduraTd.textContent = gordura;
-    imcTd.textContent = calculaImc(peso, altura);
+    nomeTd.textContent = paciente.nome;
+    pesoTd.textContent = paciente.peso;
+    alturaTd.textContent = paciente.altura;
+    gorduraTd.textContent = paciente.gordura;
+    imcTd.textContent = calculaImc(paciente.peso, paciente.altura);
 
     pacienteTr.appendChild (nomeTd);
     pacienteTr.appendChild (pesoTd);
@@ -33,5 +30,16 @@ function form (event) {
     pacienteTr.appendChild (imcTd);
   
     tabelaPacientes.appendChild(pacienteTr);
+}
 
+function coletarDadosPaciente(formulario) {
+
+    var paciente = {
+        peso: formulario.peso.value,
+        altura: formulario.altura.value,
+        gordura: formulario.gordura.value,
+        nome: formulario.nome.value
+    }
+
+    return paciente;
 }
