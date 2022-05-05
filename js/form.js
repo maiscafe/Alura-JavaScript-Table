@@ -11,14 +11,16 @@ function form (event) {
 
     var pacienteTr = montaTr(paciente); //Monta o tr com os dados do paciente
 
-    if (validarDados(paciente.peso, paciente.altura)) { // Conferir se os dados são válidos
-    console.log('teste');
-    return;
+    var erros = validaPaciente(paciente) //Pegando o retorno da validação e conferir se os dados são válidos
+
+    if (erros.length > 0) {
+        limpaErros();
+        exibeErros(erros);
+        return ;
     }
 
     tabelaPacientes.appendChild(pacienteTr); //adiciona o pacienteTr como filho da tabela de pacientes
-
-
+    limpaFormulario();
 }
 
 function coletarDadosPaciente(formulario) {
@@ -54,4 +56,36 @@ function montaTd (dado, classe) {
     td.textContent = dado;
 
     return td;
+}
+
+function validaPaciente (paciente) {
+
+    var erros = [];
+    if (!validarAltura(paciente.altura) || isNaN(paciente.altura)) {
+        erros.push('Altura inválida');
+
+    } if (!validarPeso(paciente.peso || isNaN(paciente.peso))) {
+        erros.push('Peso inválido');
+
+    } if (paciente.nome.length <= 0 || !isNaN(paciente.nome)) {
+        erros.push('Nome inválido');
+    }
+   return erros
+}
+
+function exibeErros (erro) {
+    var ul = document.querySelector('#mensagens-erro');
+    erro.forEach(function(erro){
+        var li = document.createElement('li');
+        li.textContent = erro;
+        ul.appendChild(li)
+    });
+}
+function limpaErros() {
+    document.querySelector('#mensagens-erro').innerHTML = '';
+}
+function limpaFormulario() {
+    var formulario = document.querySelector('#form-adiciona');
+    limpaErros();
+    formulario.reset();
 }

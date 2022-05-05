@@ -1,13 +1,9 @@
 
-btnCalcular = document.getElementById('btnCalcular');
-btnCalcular.addEventListener('click',imc);
+
+imc()
+
 
 var paciente = document.querySelectorAll('.paciente');
-
-
-
-
-
 
 function calculaImc (peso, altura){
     let imc = 0;
@@ -18,7 +14,6 @@ function imc () {
     var paciente = document.querySelectorAll('.paciente');
 
     for (var i = 0; i < (paciente.length); i++) {
-        console.log(paciente[i]);
 
         var tdPeso = paciente[i].querySelector('.info-peso');
         var peso = tdPeso.textContent;
@@ -44,7 +39,8 @@ function imc () {
 function validarDados (peso, altura){
     if (!validarPeso(peso)) {
         return true;
-    } else if (!validarAltura(altura)){
+    }
+    if (!validarAltura(altura)){
         return true;
     }
 }
