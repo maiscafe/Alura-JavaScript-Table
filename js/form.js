@@ -20,6 +20,7 @@ function form (event) {
     }
 
     tabelaPacientes.appendChild(pacienteTr); //adiciona o pacienteTr como filho da tabela de pacientes
+
     limpaFormulario();
 }
 
