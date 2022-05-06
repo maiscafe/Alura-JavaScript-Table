@@ -1,9 +1,8 @@
 var pacientes = document.querySelectorAll(".paciente");
-console.log(pacientes);
 
 var tabela = document.querySelector("table");
     tabela.addEventListener('dblclick', function(event){
-        nome = event.target.parentNode.childNodes[1].textContent;
+        nome = event.target.parentNode.querySelector(".info-nome").textContent;
         if (confirmAction = confirm ("Deseja remover o(a) paciente "+ nome +"?")) {
             event.target.parentNode.classList.add("fadeOut");
 

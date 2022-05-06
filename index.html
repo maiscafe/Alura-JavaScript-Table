@@ -19,7 +19,7 @@
 			<section class="container">
 				<h2>Meus pacientes</h2>
 				<label for="filtrar-tabela">Procurar:</label>
-				<input type="text" id="filtrar-tabela">
+				<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite aqui a sua busca">
 				<table>
 					<thead>
 						<tr>
@@ -71,6 +71,7 @@
 						</tr>
 					</tbody>
 				</table>
+				<button id="importar-paciente" class="botao btnImportar">Importar pacientes</button>
 			</section>
 			<section class="container" >
 				<h2 id="titulo-form">Adicionar novo paciente</h2>
@@ -103,4 +104,6 @@
 	<script src="./js/calcula-imc.js"></script>
 	<script src="./js/form.js"></script>
 	<script src="./js/remover-pacientes.js"></script>
+	<script src="./js/filtrar.js"></script>
+	<script src="./js/importar-pacientes.js"></script>
 </html>

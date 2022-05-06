@@ -9,7 +9,6 @@ function form (event) {
 
     var paciente = coletarDadosPaciente(formulario); // Desmembra o objeto Paciente e coleta todos os values do formulário
 
-    var pacienteTr = montaTr(paciente); //Monta o tr com os dados do paciente
 
     var erros = validaPaciente(paciente) //Pegando o retorno da validação e conferir se os dados são válidos
 
@@ -18,8 +17,7 @@ function form (event) {
         exibeErros(erros);
         return ;
     }
-
-    tabelaPacientes.appendChild(pacienteTr); //adiciona o pacienteTr como filho da tabela de pacientes
+    adicionaPacientes(paciente)
 
     limpaFormulario();
 }
@@ -89,4 +87,9 @@ function limpaFormulario() {
     var formulario = document.querySelector('#form-adiciona');
     limpaErros();
     formulario.reset();
+}
+function adicionaPacientes(paciente) {
+    var pacienteTr = montaTr(paciente); //Monta o tr com os dados do paciente
+    var tabelaPacientes = document.querySelector('#tabela-pacientes');
+    tabelaPacientes.appendChild(pacienteTr); //adiciona o pacienteTr como filho da tabela de pacientes
 }

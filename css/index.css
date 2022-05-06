@@ -134,7 +134,7 @@ button[disabled=disabled], button:disabled {
 	border-color: darkgray;
 
 }
-
+/* JAVASCRIPT */
 .adicionar-paciente{
     margin-top: 30px;
 }
@@ -159,4 +159,7 @@ button[disabled=disabled], button:disabled {
 	opacity: 0.6;
 	background-color: rgb(203, 255, 216);
 	transition: all 0.7s;
+}
+.invisivel {
+	display: none;
 }
